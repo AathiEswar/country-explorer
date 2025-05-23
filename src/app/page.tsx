@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 interface Country {
   name: {
@@ -110,11 +111,12 @@ export default function Home() {
                     onClick={() => router.push(`/country/${country.cca2.toLowerCase()}`)}
                     className="group card-hover glass-effect rounded-xl overflow-hidden cursor-pointer"
                   >
-                    <div className="aspect-video overflow-hidden">
-                      <img 
+                    <div className="aspect-video overflow-hidden relative">
+                      <Image 
                         src={country.flags.png} 
                         alt={country.flags.alt || `Flag of ${country.name.common}`}
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        fill
+                        className="object-cover transform group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
                     <div className="p-6">
