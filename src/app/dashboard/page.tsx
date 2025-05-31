@@ -1,12 +1,10 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import { Session } from '@supabase/supabase-js'
 
 export default function DashboardPage() {
-  const router = useRouter()
   const [loading, setLoading] = useState(true)
   const [session, setSession] = useState<Session | null>(null)
 

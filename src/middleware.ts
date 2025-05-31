@@ -2,12 +2,6 @@ import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-// Define routes that don't require authentication
-const publicRoutes = ['/login', '/register']
-
-// Define static asset paths that should be publicly accessible
-const publicAssets = ['/favicon.ico', '/icon.png']
-
 export async function middleware(request: NextRequest) {
   try {
     const res = NextResponse.next()
@@ -27,7 +21,7 @@ export async function middleware(request: NextRequest) {
     return res
   } catch (error) {
     console.error('Middleware error:', error)
-    return res
+    return NextResponse.next()
   }
 }
 

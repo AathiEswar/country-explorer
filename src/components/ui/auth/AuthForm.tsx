@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
-import { useRouter } from 'next/navigation'
 import { AuthError } from '@supabase/supabase-js'
 import Link from 'next/link'
 
@@ -11,7 +10,6 @@ interface AuthFormProps {
 }
 
 export default function AuthForm({ mode }: AuthFormProps) {
-  const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)

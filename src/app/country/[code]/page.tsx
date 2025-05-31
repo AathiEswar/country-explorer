@@ -208,10 +208,11 @@ export default function CountryPage({ params }: { params: Promise<{ code: string
                 <h2 className="text-2xl font-semibold gradient-text mb-6">Coat of Arms</h2>
                 <div className="flex justify-center relative h-48 w-full">
                   <div className="relative w-48 h-48">
-                    <img
+                    <Image
                       src={country.coatOfArms.png}
                       alt={`Coat of Arms of ${country.name.common}`}
-                      className="object-contain w-full h-full"
+                      fill
+                      className="object-contain"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.style.display = 'none';

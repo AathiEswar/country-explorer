@@ -2,11 +2,10 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { useRouter, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 
 export default function Navigation() {
-  const router = useRouter()
   const pathname = usePathname()
   const [session, setSession] = useState<boolean | null>(null)
   const [mounted, setMounted] = useState(false)
